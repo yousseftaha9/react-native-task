@@ -27,10 +27,18 @@ React Native Safe Area Context: Ensure safe area handling.
 Dynamic Avatars: Utilize UI Avatars API for generating profile pictures.
 
 ## posts screenshot
-![posts screenshot](https://github.com/yousseftaha9/react-native-task/blob/282ade5ef905750d1eef675795f74658cca52ada/Screenshot%202025-02-11%20084746.png)
+![post details screenshot](https://github.com/yousseftaha9/react-native-task/blob/7073b00fddef97353ca8c137016217eea2808613/Screenshot%202025-02-11%20084804.png)
 
 ## post details screenshot
-![post details screenshot](https://github.com/yousseftaha9/react-native-task/blob/7073b00fddef97353ca8c137016217eea2808613/Screenshot%202025-02-11%20084804.png)
+![posts screenshot](https://github.com/yousseftaha9/react-native-task/blob/282ade5ef905750d1eef675795f74658cca52ada/Screenshot%202025-02-11%20084746.png)
+
+## Getting Started
+Prerequisites
+Ensure you have the following installed:
+
+Node.js
+
+Expo CLI
 
 1. Install dependencies
 
