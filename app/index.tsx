@@ -6,147 +6,13 @@ import {
   Text,
   View,
   FlatList,
+  TouchableOpacity,
 } from "react-native";
 import { useQuery } from "@tanstack/react-query";
 import { SafeAreaView } from "react-native-safe-area-context";
 import { getPosts, getUsers } from "./api/services";
 import logo from "../assets/images/logo.jpg";
-import { Link } from "expo-router";
-
-const dummyUsers = [
-  {
-    id: 7691711,
-    name: "Ahmed",
-    email: "ahmed1@test.com",
-    gender: "male",
-    status: "active",
-  },
-  {
-    id: 7691712,
-    name: "Sarah",
-    email: "sarah2@test.com",
-    gender: "female",
-    status: "inactive",
-  },
-  {
-    id: 7691713,
-    name: "John",
-    email: "john3@test.com",
-    gender: "male",
-    status: "active",
-  },
-  {
-    id: 7691714,
-    name: "Fatima",
-    email: "fatima4@test.com",
-    gender: "female",
-    status: "active",
-  },
-  {
-    id: 7691715,
-    name: "Ali",
-    email: "ali5@test.com",
-    gender: "male",
-    status: "inactive",
-  },
-  {
-    id: 7691716,
-    name: "Zainab",
-    email: "zainab6@test.com",
-    gender: "female",
-    status: "active",
-  },
-  {
-    id: 7691717,
-    name: "Hassan",
-    email: "hassan7@test.com",
-    gender: "male",
-    status: "active",
-  },
-  {
-    id: 7691718,
-    name: "Amira",
-    email: "amira8@test.com",
-    gender: "female",
-    status: "inactive",
-  },
-  {
-    id: 7691719,
-    name: "Mohamed",
-    email: "mohamed9@test.com",
-    gender: "male",
-    status: "active",
-  },
-  {
-    id: 7691720,
-    name: "Layla",
-    email: "layla10@test.com",
-    gender: "female",
-    status: "active",
-  },
-];
-const dummyPosts = [
-  {
-    id: 192071,
-    user_id: 7691711,
-    title: "First Post",
-    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-  },
-  {
-    id: 192072,
-    user_id: 7691712,
-    title: "Second Post",
-    body: "Curabitur ac felis arcu. Sed quis eros et quam blandit finibus.",
-  },
-  {
-    id: 192073,
-    user_id: 7691713,
-    title: "Third Post",
-    body: "Mauris malesuada velit sit amet risus suscipit venenatis.",
-  },
-  {
-    id: 192074,
-    user_id: 7691714,
-    title: "Fourth Post",
-    body: "Donec at nibh id velit fringilla scelerisque.",
-  },
-  {
-    id: 192075,
-    user_id: 7691715,
-    title: "Fifth Post",
-    body: "Pellentesque nec velit et erat venenatis volutpat.",
-  },
-  {
-    id: 192076,
-    user_id: 7691716,
-    title: "Sixth Post",
-    body: "Aliquam vestibulum risus id tincidunt tincidunt.",
-  },
-  {
-    id: 192077,
-    user_id: 7691717,
-    title: "Seventh Post",
-    body: "Proin feugiat magna sit amet tellus suscipit fermentum.",
-  },
-  {
-    id: 192078,
-    user_id: 7691718,
-    title: "Eighth Post",
-    body: "Nunc tincidunt justo ac libero venenatis, vitae viverra sem.",
-  },
-  {
-    id: 192079,
-    user_id: 7691719,
-    title: "Ninth Post",
-    body: "Vestibulum ac tellus a nisl gravida auctor.",
-  },
-  {
-    id: 192080,
-    user_id: 7691720,
-    title: "Tenth Post",
-    body: "Quisque non dui eget ligula porttitor ultricies.",
-  },
-];
+import { Link, router } from "expo-router";
 
 interface Post {
   id: number;
@@ -198,8 +64,8 @@ const Index = () => {
   console.log(posts);
   console.log(users);
 
-  const mergedData = dummyPosts.map((post: Post) => {
-    const user = dummyUsers.find((u: User) => u.id === post.user_id);
+  const mergedData = posts.map((post: Post) => {
+    const user = users.find((u: User) => u.id === post.user_id);
     return {
       ...post,
       userName: user?.name || "Unknown User",
@@ -207,17 +73,12 @@ const Index = () => {
     };
   });
   console.log(mergedData);
-  //   const mergedData = posts.map((post: Post) => {
-  //     const user = users.find((u: User) => u.id === post.user_id);
-  //     return {
-  //       ...post,
-  //       userName: user?.name || "Unknown User",
-  //       avatar: user?.avatar || null,
-  //     };
-  //   });
 
   const renderItem = ({ item }: { item: any }) => (
-    <Link style={styles.card} href={`/post/${item.id}`}>
+    <TouchableOpacity
+      style={styles.card}
+      onPress={() => router.push(`/post/${item.id}`)}
+    >
       {/* <Image
         source={item.avatar ? { uri: item.avatar } : logo}
         style={styles.avatar}
@@ -230,7 +91,7 @@ const Index = () => {
         <Text style={styles.postTitle}>{item.title}</Text>
         <Text style={styles.postBody}>{item.body}</Text>
       </View>
-    </Link>
+    </TouchableOpacity>
   );
 
   return (
