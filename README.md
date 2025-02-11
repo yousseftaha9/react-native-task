@@ -4,6 +4,8 @@ This is an [Expo](https://expo.dev) project created with [`create-expo-app`](htt
 
 ## Get started
 
+![posts screenshot](https://github.com/yousseftaha9/react-native-task/blob/282ade5ef905750d1eef675795f74658cca52ada/Screenshot%202025-02-11%20084746.png)
+
 1. Install dependencies
 
    ```bash
