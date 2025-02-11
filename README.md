@@ -1,10 +1,36 @@
 # Welcome to your Expo app 👋
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This project is a React Native application built with Expo to showcase posts, users, and comments fetched from an external API. The app allows users to explore detailed information about posts, authors, and related comments.
 
-## Get started
+## Features
 
+Post Details: View the post title, body, and author information.
+
+User Information: Display author details with dynamically generated profile avatars.
+
+Comments Section: Show comments with commenter names and avatars.
+
+Loading State: Display a spinner during data fetching.
+
+Error Handling: Provide user-friendly error messages when data fails to load.
+
+## Technologies Used
+
+React Native: Framework for building mobile applications.
+
+Expo Router: Navigation and routing within the app.
+
+React Query: Efficient server state management.
+
+React Native Safe Area Context: Ensure safe area handling.
+
+Dynamic Avatars: Utilize UI Avatars API for generating profile pictures.
+
+## posts screenshot
 ![posts screenshot](https://github.com/yousseftaha9/react-native-task/blob/282ade5ef905750d1eef675795f74658cca52ada/Screenshot%202025-02-11%20084746.png)
+
+## post details screenshot
+![post details screenshot](https://github.com/yousseftaha9/react-native-task/blob/7073b00fddef97353ca8c137016217eea2808613/Screenshot%202025-02-11%20084804.png)
 
 1. Install dependencies
 
